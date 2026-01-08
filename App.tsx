@@ -130,7 +130,7 @@ const App: React.FC = () => {
               {step === TutorialStep.ANALYSIS && (
                 <div className="space-y-8 animate-in fade-in slide-in-from-right-8 duration-500">
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-black text-slate-900 italic">Phase 1: Force Analysis</h3>
+                    <h3 className="text-3xl font-black text-slate-900 italic">Draw Free Body Diagrams</h3>
                     <p className="text-xl text-slate-600">
                       Isolate the bodies. <strong>Tension (T)</strong> pulls upward, while <strong>Weight (mg)</strong> pulls downward.
                     </p>
