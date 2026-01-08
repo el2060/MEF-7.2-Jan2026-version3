@@ -84,7 +84,7 @@ const App: React.FC = () => {
             <div className="px-10 py-5 border-b border-slate-50 flex justify-between items-center bg-slate-50/20">
               <span className="text-xs font-black text-blue-600 uppercase tracking-[0.25em]">PHASE {step + 1}</span>
               <h2 className="text-lg font-extrabold text-slate-700">
-                {['The Setup', 'Force Analysis', 'The Solution', 'Live Physics'][step]}
+                {['Problem Setup', 'Step 1', 'Step 2', 'Simulation'][step]}
               </h2>
             </div>
 
@@ -130,7 +130,7 @@ const App: React.FC = () => {
               {step === TutorialStep.ANALYSIS && (
                 <div className="space-y-8 animate-in fade-in slide-in-from-right-8 duration-500">
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-black text-slate-900 italic">Draw Free Body Diagrams</h3>
+                    <h3 className="text-3xl font-black text-slate-900 italic">Step 1: Draw free body diagram of the elevator and counterweight</h3>
                     <p className="text-xl text-slate-600">
                       Isolate the bodies. <strong>Tension (T)</strong> pulls upward, while <strong>Weight (mg)</strong> pulls downward.
                     </p>
@@ -146,19 +146,20 @@ const App: React.FC = () => {
 
               {step === TutorialStep.SOLVE && (
                 <div className="space-y-8 animate-in fade-in slide-in-from-right-8 duration-500">
+
                   <div className="space-y-4 text-center">
-                    <h3 className="text-3xl font-black text-slate-900">Phase 2: Applying F = ma</h3>
+                    <h3 className="text-3xl font-black text-slate-900">Step 2: Apply Newton's Second Law to each body</h3>
                     <p className="text-lg text-slate-600">Solving the system of equations for <strong>a</strong> and <strong>T</strong>.</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
                       <div className="p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
                         <p className="text-xs font-black text-blue-500 uppercase mb-2">Lift Car:</p>
-                        <p className="font-mono text-2xl font-bold tracking-tighter">T - m₁g = m₁a</p>
+                        <p className="font-mono text-2xl font-bold tracking-tighter">T - {state.m1}g = {state.m1}a</p>
                       </div>
                       <div className="p-6 bg-red-50/50 rounded-2xl border border-red-100">
                         <p className="text-xs font-black text-red-500 uppercase mb-2">Counterweight:</p>
-                        <p className="font-mono text-2xl font-bold tracking-tighter">m₂g - T = m₂a</p>
+                        <p className="font-mono text-2xl font-bold tracking-tighter">{state.m2}g - T = {state.m2}a</p>
                       </div>
 
                       {/* Insight: Safety */}
