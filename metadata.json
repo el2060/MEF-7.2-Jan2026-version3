@@ -1,0 +1,5 @@
+{
+  "name": "MEF 7.2 Newton's Second Law: Connected Bodies Simulation",
+  "description": "An interactive guided learning module for mechanical engineering students to explore Newton's Second Law through an elevator and counterweight system.",
+  "requestFramePermissions": []
+}
