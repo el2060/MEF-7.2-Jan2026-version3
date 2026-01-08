@@ -237,6 +237,7 @@ const App: React.FC = () => {
             state={state}
             setState={setState}
             onReset={resetSim}
+            step={step}
           />
 
           {step === TutorialStep.SIMULATE && (

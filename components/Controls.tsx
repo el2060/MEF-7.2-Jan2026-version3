@@ -1,14 +1,15 @@
 
 import React from 'react';
-import { SimulationState } from '../types';
+import { SimulationState, TutorialStep } from '../types';
 
 interface Props {
   state: SimulationState;
   setState: React.Dispatch<React.SetStateAction<SimulationState>>;
   onReset: () => void;
+  step: TutorialStep;
 }
 
-const Controls: React.FC<Props> = ({ state, setState, onReset }) => {
+const Controls: React.FC<Props> = ({ state, setState, onReset, step }) => {
   const handleChange = (key: 'm1' | 'm2', val: number) => {
     setState(prev => {
       const newState = { ...prev, [key]: val, position: 0, velocity: 0, isPlaying: false };
@@ -59,21 +60,22 @@ const Controls: React.FC<Props> = ({ state, setState, onReset }) => {
       </div>
 
 
-
-      <div className="flex flex-col gap-3">
-        <button
-          onClick={() => setState(s => ({ ...s, isPlaying: !s.isPlaying }))}
-          className={`w-full py-5 text-lg font-black uppercase tracking-widest rounded-2xl transition-all shadow-xl active:scale-95 ${state.isPlaying ? 'bg-amber-500 text-white shadow-amber-200/50' : 'bg-blue-600 text-white shadow-blue-200/50 hover:bg-blue-700'}`}
-        >
-          {state.isPlaying ? 'Pause Lift' : 'Start Lift'}
-        </button>
-        <button
-          onClick={onReset}
-          className="w-full py-4 bg-slate-100 text-slate-500 text-sm font-black uppercase tracking-widest rounded-2xl hover:bg-slate-200 transition-colors"
-        >
-          Reset Simulation
-        </button>
-      </div>
+      {step === TutorialStep.SIMULATE && (
+        <div className="flex flex-col gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <button
+            onClick={() => setState(s => ({ ...s, isPlaying: !s.isPlaying }))}
+            className={`w-full py-5 text-lg font-black uppercase tracking-widest rounded-2xl transition-all shadow-xl active:scale-95 ${state.isPlaying ? 'bg-amber-500 text-white shadow-amber-200/50' : 'bg-blue-600 text-white shadow-blue-200/50 hover:bg-blue-700'}`}
+          >
+            {state.isPlaying ? 'Pause Lift' : 'Start Lift'}
+          </button>
+          <button
+            onClick={onReset}
+            className="w-full py-4 bg-slate-100 text-slate-500 text-sm font-black uppercase tracking-widest rounded-2xl hover:bg-slate-200 transition-colors"
+          >
+            Reset Simulation
+          </button>
+        </div>
+      )}
     </div>
   );
 };
