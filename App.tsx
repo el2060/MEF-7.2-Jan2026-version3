@@ -10,9 +10,9 @@ const App: React.FC = () => {
   const [state, setState] = useState<SimulationState>({
     m1: 800,
     m2: 1000,
-    g: 9.8,
+    g: 9.81,
     a: 1.09,
-    T: 8711,
+    T: 8720,
     isPlaying: false,
     position: 0,
     velocity: 0
@@ -95,7 +95,7 @@ const App: React.FC = () => {
                     <h3 className="text-4xl font-black text-slate-900 tracking-tight">The Great Elevator Escape</h3>
                     <p className="text-xl text-slate-600 leading-relaxed">
                       How do we predict the motion of an elevator and its counterweight?
-                      We model them as <strong>Connected Bodies</strong> using an ideal cable and pulley system.
+                      We model them as <strong>Connected Bodies</strong> using an ideal cable and pulley system, and use <strong>Newton's Second Law</strong> to calculate how fast the elevator is moving.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -133,6 +133,7 @@ const App: React.FC = () => {
                     <h3 className="text-3xl font-black text-slate-900 italic">Step 1: Draw free body diagram of the elevator and counterweight</h3>
                     <p className="text-xl text-slate-600">
                       Isolate the bodies. <strong>Tension (T)</strong> pulls upward, while <strong>Weight (mg)</strong> pulls downward.
+                      <span className="text-red-600 font-bold block mt-2">Apply Newton's Second Law to each body</span>
                     </p>
                   </div>
                   <div className="scale-110 py-6">
@@ -177,7 +178,7 @@ const App: React.FC = () => {
                     </div>
                     <div className="bg-slate-900 p-8 rounded-[2rem] flex flex-col items-center justify-center text-center shadow-2xl border-4 border-slate-800">
                       <span className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-4">Calculated Result</span>
-                      <p className="text-5xl font-mono font-black text-emerald-400 mb-2">{state.a.toFixed(2)}<span className="text-xl ml-2">m/s²</span></p>
+                      <p className="text-5xl font-mono font-black text-emerald-400 mb-2">a = {state.a.toFixed(2)}<span className="text-xl ml-2">m/s²</span></p>
                       <p className="text-2xl font-mono font-bold text-blue-300">T = {state.T.toFixed(0)} N</p>
                     </div>
                   </div>
