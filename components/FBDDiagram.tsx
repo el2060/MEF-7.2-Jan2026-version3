@@ -33,8 +33,8 @@ const FBDDiagram: React.FC<Props> = ({ m1, m2 }) => {
         <div className={`absolute left-[-60px] top-[100px] flex flex-col items-center transition-all duration-700 ${revealed ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
           <text className="font-mono font-bold text-xl text-slate-600 mb-1">a</text>
           <svg width="20" height="60" viewBox="0 0 20 60">
-            <path d="M 10 60 L 10 10" stroke="#475569" strokeWidth="2" fill="none" />
-            <path d="M 4 12 L 10 0 L 16 12" fill="#475569" />
+            <path d="M 10 60 L 10 10" stroke="#475569" strokeWidth="4" fill="none" />
+            <path d="M 1 18 L 10 0 L 19 18" fill="#475569" />
           </svg>
         </div>
 
@@ -45,15 +45,15 @@ const FBDDiagram: React.FC<Props> = ({ m1, m2 }) => {
 
           {/* Tension Force (T) */}
           <g className={`transition-all duration-700 delay-100 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <line x1="90" y1="90" x2="90" y2="20" stroke="#2563eb" strokeWidth="4" />
-            <path d="M 82 25 L 90 5 L 98 25" fill="#2563eb" />
+            <line x1="90" y1="90" x2="90" y2="20" stroke="#2563eb" strokeWidth="6" />
+            <path d="M 78 35 L 90 5 L 102 35" fill="#2563eb" />
             <text x="110" y="55" className="font-mono font-bold text-2xl" fill="#2563eb">T</text>
           </g>
 
           {/* Weight Force (m1g) */}
           <g className={`transition-all duration-700 delay-200 ${revealed ? 'opacity-100 -translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-            <line x1="90" y1="190" x2="90" y2="260" stroke="#ef4444" strokeWidth="4" />
-            <path d="M 82 255 L 90 275 L 98 255" fill="#ef4444" />
+            <line x1="90" y1="190" x2="90" y2="260" stroke="#ef4444" strokeWidth="6" />
+            <path d="M 78 245 L 90 275 L 102 245" fill="#ef4444" />
             <text x="110" y="235" className="font-mono font-bold text-2xl" fill="#ef4444">m₁g</text>
           </g>
         </svg>
@@ -69,8 +69,8 @@ const FBDDiagram: React.FC<Props> = ({ m1, m2 }) => {
         <div className={`absolute right-[-60px] top-[100px] flex flex-col items-center transition-all duration-700 ${revealed ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
           <text className="font-mono font-bold text-xl text-slate-600 mb-1">a</text>
           <svg width="20" height="60" viewBox="0 0 20 60">
-            <path d="M 10 0 L 10 50" stroke="#475569" strokeWidth="2" fill="none" />
-            <path d="M 4 48 L 10 60 L 16 48" fill="#475569" />
+            <path d="M 10 0 L 10 50" stroke="#475569" strokeWidth="4" fill="none" />
+            <path d="M 1 42 L 10 60 L 19 42" fill="#475569" />
           </svg>
         </div>
 
@@ -81,15 +81,15 @@ const FBDDiagram: React.FC<Props> = ({ m1, m2 }) => {
 
           {/* Tension Force (T) */}
           <g className={`transition-all duration-700 delay-100 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <line x1="90" y1="90" x2="90" y2="20" stroke="#2563eb" strokeWidth="4" />
-            <path d="M 82 25 L 90 5 L 98 25" fill="#2563eb" />
+            <line x1="90" y1="90" x2="90" y2="20" stroke="#2563eb" strokeWidth="6" />
+            <path d="M 78 35 L 90 5 L 102 35" fill="#2563eb" />
             <text x="110" y="55" className="font-mono font-bold text-2xl" fill="#2563eb">T</text>
           </g>
 
           {/* Weight Force (m2g) */}
           <g className={`transition-all duration-700 delay-200 ${revealed ? 'opacity-100 -translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-            <line x1="90" y1="190" x2="90" y2="260" stroke="#ef4444" strokeWidth="4" />
-            <path d="M 82 255 L 90 275 L 98 255" fill="#ef4444" />
+            <line x1="90" y1="190" x2="90" y2="260" stroke="#ef4444" strokeWidth="6" />
+            <path d="M 78 245 L 90 275 L 102 245" fill="#ef4444" />
             <text x="110" y="235" className="font-mono font-bold text-2xl" fill="#ef4444">m₂g</text>
           </g>
         </svg>
